@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> Portfolio Website</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet"href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+	<style>
+		.dropbtn {
+		  background-color: #f76ec1;
+		  color: white;
+		  padding: 12px;
+		  font-size: 12px;
+		  border: none;
+		  cursor: pointer;
+		  border-radius: 16px;
+		}
+		
+		.dropdown {
+		  position: relative;
+		  display: inline-block;
+		}
+		
+		.dropdown-content {
+		  display: none;
+		  position: absolute;
+		  background-color: #f9f9f9;
+		  min-width: 160px;
+		  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		  z-index: 1;
+		}
+		
+		.dropdown-content a {
+		  color: black;
+		  padding: 12px 16px;
+		  text-decoration: none;
+		  display: block;
+		}
+		
+		.dropdown-content a:hover {background-color: #f1f1f1}
+		
+		.dropdown:hover .dropdown-content {
+		  display: block;
+		}
+		
+		.dropdown:hover .dropbtn {
+		  background-color: #4b63feec;
+		}
+
+* {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600;800;900&family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+    
+}
+
+:root {
+    --bg-color: #101126;
+    --second-bg-color: #202020;
+    --text-color: #fff;
+    --second-color: #ffffff;
+    --main-color: #15546f;
+    --big-font: 5rem;
+    --h2-font: 3rem;
+    --p-font: 1.1rem;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    background-color: black;
+    color: white;
+}
+
+header{
+    margin-top: 0px;
+    position: fixed;
+    top: 10;
+    left: 0;
+    width: 100%;
+    padding: 1rem 8%;
+    background-color: #fa7ac7;
+    filter: drop-shadow(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.navlist {
+    display: flex;
+}
+
+.navlist a {
+    color: var(--second-color);
+    font-size: 17px;
+    font-weight: 500;
+    margin: 0 25px;
+    transition: all .45s ease;
+}
+
+.navlist a:hover {
+    color: var(--main-color);
+}
+
+.navlist a.active {
+    color: var(--main-color);
+}
+
+#menu-icon {
+    font-size: 35px;
+    color: var(--text-color);
+    z-index: 1000;
+    cursor: pointer;
+    margin-left: 25px;
+    display: none;
+}
+
+section {
+    padding: 170px 15% 120px;
+}
+
+.logo{
+    font-size: 3rem;
+    color: #942e6b;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.logo:hover{
+    transform: scale(1.1);
+}
+
+nav a{
+    font-size: 1.8rem;
+    color: white;
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+nav a:hover,
+nav a.active{
+    color: #f387c7;
+    border-bottom: 3px solid #f387c7;
+}
+
+@media(max-width: 900px){
+    nav{
+        position: absolute;
+        display: none;
+        top: 0;
+        right: 0;
+        width: 10%;
+        border-left: 3px solid #f387c7;
+        border-bottom: 3px solid #b74b4b;
+        border-bottom-left-radius: 2rem;
+        padding: 1rem solid;
+        background-color: #161616;
+        border-top: 0.1rem solid rgba(0,0,0,0.1);
+    }
+
+    nav.active{
+        display: block;
+    }
+
+    nav a{
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+    }
+
+    nav a:hover,
+    nav a.active{
+        padding: 1rem;
+        border-radius: 0.5rem;
+        border-bottom: 0.5rem solid #b74b4b;
+    }
+}
+
+section{
+    min-height: 100vh;
+    padding: 5rem 9% 5rem;
+}
+
+.home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+    background-color: #101126;
+}
+
+.home .home-content h1{
+    font-size: 6rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+span{
+    color: #b74b4b;
+}
+
+.home-content h3{
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.home-content p{
+    font-size:2rem;
+}
+
+.home-img{
+    border-radius: 80%;
+    padding-top: 50px;
+}
+
+.home-img img{
+    position: relative;
+    width: 32vw;
+    border-radius: 80%;
+    box-shadow: 0 0 25px solid #cfaeae;
+    cursor: pointer;
+    transition: 0.2s linear;
+}
+
+.home-img img:hover{
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+
+.typing-text{
+    font-size: 34px;
+    font-weight: 600;
+    min-width: 280px;
+}
+
+.typing-text span{
+    position: relative;
+}
+
+.typing-text span::before{
+    content: "Graphic Artist";
+    color: #b74b4b;
+    animation: words 15s infinite;
+}
+
+.typing-text span::after{
+    content: "";
+    background-color:  #101126;
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    right: -8;
+    animation: cursor 0.7s infinite;
+}
+
+
+
+
+@keyframes words{
+    0%, 20%{
+        content: "Graphic Artist";
+    }
+    21%, 40%{
+        content: "Video Editor";
+    }
+    41%, 60%{
+        content: "Script Writer";
+    }
+    61%, 80%{
+        content: "Youtuber";
+    }
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px;
+    background: var(--main-color);
+    border-radius: 5px;
+    color: var(--text-color);
+    font-size: 1rem;
+    letter-spacing: 1px;
+    font-weight: 500;
+    transition: all .45s ease;
+}
+
+.btn:hover {
+    transform: scale(0.9);
+}
+
+.about {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.about-img img {
+    max-width: 530px;
+    height: auto;
+    width: 100%;
+    border-radius: 5px;
+
+}
+
+.about-text h2 {
+    font-size: var(--h2-font);
+    line-height: 1;
+    font-size: 50px;
+}
+
+.about-text h4 {
+    font-size: 30px;
+    font-weight: 600;
+    color: var(--text-color);
+    line-height: 1.7;
+    margin: 15px 0 30px;
+}
+
+.about-text p {
+    color: var(--second-color);
+    font-size: var(--p-font);
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 1.8;
+    margin-bottom: 4rem;
+    font-size: 24px;
+}
+
+.services {
+    background: var(--second-bg-color);
+
+}
+
+.main-text {
+    text-align: center;
+}
+
+.main-text p {
+    color: var(--second-color);
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.main-text h2 {
+    font-size: var(--h2-font);
+    line-height: 1;
+}
+
+.services-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, auto));
+    align-items: center;
+    gap: 2.5rem;
+    margin-top: 5rem;
+}
+
+.box {
+    background: var(--bg-color);
+    padding: 45px 50px;
+    border-radius: 8px;
+    transition: all .45s ease;
+}
+
+.s-icons i {
+    font-size: 32px;
+    margin-bottom: 20px;
+
+}
+
+.box h3 {
+    font-size: 30px;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+.box p {
+    color: var(--second-color);
+    font-size: 2rem;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.box:hover {
+    transform: translateY(-8px);
+    cursor: pointer;
+}
+
+.portfolio-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, auto));
+    align-items: center;
+    gap: 2.5rem;
+    margin-top: 5rem;
+}
+
+.row {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.row img {
+    width: 100%;
+    border-radius: 8px;
+    display: block;
+    transition: transform 0.5s;
+}
+
+.layer {
+    width: 100%;
+    height: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.1), #585959);
+    position: absolute;
+    border-radius: 8px;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 40px;
+    transition: height 0.5s;
+}
+
+.layer h5 {
+    font: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.layer p {
+    color: var(--second-color);
+    font-size: 1rem;
+    line-height: 1.8;
+
+}
+
+.layer i {
+    color: var(--main-color);
+    margin-top: 20px;
+    font-size: 20px;
+    background: var(--text-color);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+
+}
+
+.row:hover img {
+    transform: scale(1.1);
+
+}
+
+.row:hover .layer {
+    height: 100%;
+}
+
+
+
+
+		</style>
+</head>
+<body>
+	
+	<header>
+		<a href="#" class="logo">Tin        <span>Port</span>folio</a>
+		<ul class="navlist">
+			<li><a href="#home" class="active">Home</a></li>
+			<li><a href="#about">About Me</a></li>
+			<li><a href="#works">My Works</a></li>
+		</ul>
+		<div class="bx bx-menu" id="menu-icon"></div>
+
+		
+	</header>
+
+	
+
+	<section class="home" id="home">
+		<div class="home-img">
+			<img src="embarass.png" alt="">
+        </div>
+
+		<div class="home-content">
+			<h1>Hi, It's <span>Christine</span></h1>
+			<h3 class="typing-text">I'm a <span></span></h3>
+	</section>
+
+	
+	<section class="about" id="about">
+		<div class="about-img">
+			<img src="embarass.png">
+        </div>
+
+		<div class="about-text">
+			<h2>About <span>Me</span></h2>
+			<h4>Graphic Artist!</h4>
+			<p> Hi, I am Christine, or you can call me Tin. I am an IT student at Bulacan State University Sarmiento -  Campus.</p>
+		</div>
+	</section>
+
+	<section class="services" id="services">
+	<div class="main-text">
+		<h2><span>My Works</h2>
+        </div>
+	<div class="services-content">
+		<div class="box">
+			<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" class="bi bi-camera-reels" viewBox="0 0 16 16">
+				<path d="M6 3a3 3 0 1 1-6 0 3 3 0 0 1 6 0M1 3a2 2 0 1 0 4 0 2 2 0 0 0-4 0"/>
+				<path d="M9 6h.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 7.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 16H2a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2zm6 8.73V7.27l-3.5 1.555v4.35zM1 8v6a1 1 0 0 0 1 1h7.5a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1"/>
+				<path d="M9 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6M7 3a2 2 0 1 1 4 0 2 2 0 0 1-4 0"/>
+			  </svg>
+			<h3>Video Edits</h3>
+			<div class="dropdown">
+				<button class="dropbtn">Click here</button>
+      </div>
+    </div>
+
+		<div class="box">
+			<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" class="bi bi-brush" viewBox="0 0 16 16">
+                <path d="M15.825.12a.5.5 0 0 1 .132.584c-1.53 3.43-4.743 8.17-7.095 10.64a6.1 6.1 0 0 1-2.373 1.534c-.018.227-.06.538-.16.868-.201.659-.667 1.479-1.708 1.74a8.1 8.1 0 0 1-3.078.132 4 4 0 0 1-.562-.135 1.4 1.4 0 0 1-.466-.247.7.7 0 0 1-.204-.288.62.62 0 0 1 .004-.443c.095-.245.316-.38.461-.452.394-.197.625-.453.867-.826.095-.144.184-.297.287-.472l.117-.198c.151-.255.326-.54.546-.848.528-.739 1.201-.925 1.746-.896q.19.012.348.048c.062-.172.142-.38.238-.608.261-.619.658-1.419 1.187-2.069 2.176-2.67 6.18-6.206 9.117-8.104a.5.5 0 0 1 .596.04M4.705 11.912a1.2 1.2 0 0 0-.419-.1c-.246-.013-.573.05-.879.479-.197.275-.355.532-.5.777l-.105.177c-.106.181-.213.362-.32.528a3.4 3.4 0 0 1-.76.861c.69.112 1.736.111 2.657-.12.559-.139.843-.569.993-1.06a3 3 0 0 0 .126-.75zm1.44.026c.12-.04.277-.1.458-.183a5.1 5.1 0 0 0 1.535-1.1c1.9-1.996 4.412-5.57 6.052-8.631-2.59 1.927-5.566 4.66-7.302 6.792-.442.543-.795 1.243-1.042 1.826-.121.288-.214.54-.275.72v.001l.575.575zm-4.973 3.04.007-.005zm3.582-3.043.002.001h-.002z"/>
+              </svg>
+			<h3>PhotoShop Works</h3>
+			<div class="dropdown">
+				<button class="dropbtn">Click here</button>
+				</div>
+			  </div>
+			
+  </div>
+
+		<div class="box">
+			<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" class="bi bi-play-circle-fill" viewBox="0 0 16 16">
+				<path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814z"/>
+			  </svg>
+			<h3>Animation</h3>
+			<div class="dropdown">
+				<button class="dropbtn">Click here</button>
+			  </div>
+			
+        </div>
+	</div>
+
+</section>
+
+		<br>
+		</script>
+</section>
+</body>
+
+</html>
